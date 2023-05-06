@@ -41,6 +41,7 @@ public class View extends javax.swing.JFrame {
         introFormAl = new javax.swing.JMenuItem();
         introFormInscript = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        btnSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,6 +87,15 @@ public class View extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Exit");
+
+        btnSalir.setText("Exit");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        jMenu2.add(btnSalir);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -134,6 +144,11 @@ public class View extends javax.swing.JFrame {
         escritorio.moveToFront(fi);
     }//GEN-LAST:event_introFormInscriptActionPerformed
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -171,6 +186,7 @@ public class View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem btnSalir;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuItem introFormAl;
     private javax.swing.JMenuItem introFormInscript;
