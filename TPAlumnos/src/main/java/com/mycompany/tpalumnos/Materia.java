@@ -49,7 +49,7 @@ public class Materia {
         this.ano = ano;
     }
     
-    public boolean agregarMateria(Integer codigoMateria, String nombre){
+    public boolean agregarMateria(Integer codigoMateria, String nombre, Integer ano){
         boolean agregado=false;
         if(!listaMaterias.containsKey(codigoMateria)){
             listaMaterias.put(codigoMateria, nombre);

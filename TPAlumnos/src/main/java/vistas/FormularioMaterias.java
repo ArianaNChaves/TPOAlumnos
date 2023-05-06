@@ -5,7 +5,6 @@
  */
 package vistas;
 
-
 import com.mycompany.tpalumnos.Materia;
 import java.util.HashMap;
 import java.util.Map;
@@ -143,18 +142,18 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
 
     private void saveFormMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveFormMatActionPerformed
         // TODO add your handling code here:
-        
-        try{
-        int codigoMateria=Integer.parseInt(jtCodMat.getText());
-        String nombreMateria=jtNombreMat.getText();
-        int anioMateria=Integer.parseInt(jtAnioPert.getText());
-        Materia nvMateria=new Materia(codigoMateria,nombreMateria,anioMateria);
-        View.nuevaMateria.agregarMateria(codigoMateria, nombreMateria);
-        JOptionPane.showMessageDialog(this, "Materia agregada exitosamente.");
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(this,"Materia no agregada por error de datos.");
+
+        try {
+            int codigoMateria = Integer.parseInt(jtCodMat.getText());
+            String nombreMateria = jtNombreMat.getText();
+            int anioMateria = Integer.parseInt(jtAnioPert.getText());
+            Materia nvMateria = new Materia(codigoMateria, nombreMateria, anioMateria);
+            View.nuevaMateria.agregarMateria(codigoMateria, nombreMateria,anioMateria);
+            JOptionPane.showMessageDialog(this, "Materia agregada exitosamente.");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Materia no agregada por error de datos.");
         }
-        
+
     }//GEN-LAST:event_saveFormMatActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -166,7 +165,7 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
-    public void limpiar(){
+    public void limpiar() {
         jtCodMat.setText("");
         jtNombreMat.setText("");
         jtAnioPert.setText("");

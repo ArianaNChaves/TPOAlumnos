@@ -135,11 +135,11 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int Legajo=Integer.parseInt(jtLegajo.getText());
-        String apellido=jtApellido.getText();
-        String nombre=jtNombre.getText();
+        int Legajo = Integer.parseInt(jtLegajo.getText());
+        String apellido = jtApellido.getText();
+        String nombre = jtNombre.getText();
     }//GEN-LAST:event_jButton1ActionPerformed
-  public void limpiar(){
+    public void limpiar() {
         jtLegajo.setText("");
         jtApellido.setText("");
         jtNombre.setText("");

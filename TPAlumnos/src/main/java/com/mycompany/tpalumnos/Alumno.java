@@ -8,27 +8,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Alumno {
-    Integer legajo;
-    String apellido;
-    String nombre;
-    List<Materia> materias;
 
-    public Alumno(Integer legajo, String apellido, String nombre) {
+    private int legajo;
+    private String apellido;
+    private String nombre;
+
+    public Alumno(int legajo, String apellido, String nombre) {
         this.legajo = legajo;
         this.apellido = apellido;
         this.nombre = nombre;
-        materias = new ArrayList<>();
+
     }
 
     public Alumno() {
     }
 
- 
-    public Integer getLegajo() {
+    public int getLegajo() {
         return legajo;
     }
 
-    public void setLegajo(Integer legajo) {
+    public void setLegajo(int legajo) {
         this.legajo = legajo;
     }
 
@@ -48,16 +47,4 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public void agregarMateria(Materia m) {
-        if (!materias.contains(m)) {
-            this.materias.add(m);
-        } else {
-            System.out.printf("El alumno %s ya esta inscripto en la materia %s", this.nombre, m.getNombre());
-        }
-
-    }
-
-    public Integer cantidadMaterias() {
-        return materias.size();
-    }
 }
