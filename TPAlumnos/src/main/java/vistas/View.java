@@ -5,14 +5,21 @@
  */
 package vistas;
 
+import com.mycompany.tpalumnos.Materia;
+
+
+
+
+
 /**
  *
  * @author Mauro
  */
-public class View extends javax.swing.JInternalFrame {
+public class View extends javax.swing.JFrame {
+    public static Materia nuevaMateria=new Materia();
 
     /**
-     * Creates new form View
+     * Creates new form FormularioMateria
      */
     public View() {
         initComponents();
@@ -27,37 +34,54 @@ public class View extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        introFormMat = new javax.swing.JMenuItem();
+        introFormAl = new javax.swing.JMenuItem();
+        introFormInscript = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
-        jDesktopPane1.setBackground(new java.awt.Color(0, 0, 0));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 643, Short.MAX_VALUE)
+        escritorio.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 573, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 404, Short.MAX_VALUE)
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 390, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Accessibility");
+        jMenu1.setText("Accesibilidad");
 
-        jMenuItem1.setText("Formulario Materia");
-        jMenu1.add(jMenuItem1);
+        introFormMat.setText("Formulario Materia");
+        introFormMat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                introFormMatActionPerformed(evt);
+            }
+        });
+        jMenu1.add(introFormMat);
 
-        jMenuItem2.setText("Formulario Alumno");
-        jMenu1.add(jMenuItem2);
+        introFormAl.setText("Formulario Alumno");
+        introFormAl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                introFormAlActionPerformed(evt);
+            }
+        });
+        jMenu1.add(introFormAl);
 
-        jMenuItem3.setText("Formulario de Inscripcion");
-        jMenu1.add(jMenuItem3);
+        introFormInscript.setText("Formulario Inscripcion");
+        introFormInscript.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                introFormInscriptActionPerformed(evt);
+            }
+        });
+        jMenu1.add(introFormInscript);
 
         jMenuBar1.add(jMenu1);
 
@@ -70,24 +94,89 @@ public class View extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(escritorio)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void introFormMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_introFormMatActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();;
+        escritorio.repaint();
+        FormularioMaterias fm=new FormularioMaterias();
+        fm.setVisible(true);
+        escritorio.add(fm);
+        escritorio.moveToFront(fm);
+    }//GEN-LAST:event_introFormMatActionPerformed
+
+    private void introFormAlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_introFormAlActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        FormularioAlumno fa=new FormularioAlumno();
+        fa.setVisible(true);
+        escritorio.add(fa);
+        escritorio.moveToFront(fa);
+    }//GEN-LAST:event_introFormAlActionPerformed
+
+    private void introFormInscriptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_introFormInscriptActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        FormularioInscripcion fi=new FormularioInscripcion();
+        fi.setVisible(true);
+        escritorio.add(fi);
+        escritorio.moveToFront(fi);
+    }//GEN-LAST:event_introFormInscriptActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new View().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JMenuItem introFormAl;
+    private javax.swing.JMenuItem introFormInscript;
+    private javax.swing.JMenuItem introFormMat;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 }

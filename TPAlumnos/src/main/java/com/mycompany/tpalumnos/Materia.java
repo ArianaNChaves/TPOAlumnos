@@ -5,22 +5,25 @@
 package com.mycompany.tpalumnos;
 
 public class Materia {
-    Integer idMateria;
+    Integer codigoMateria;
     String nombre;
-    Integer anio;
+    Integer ano;
 
-    public Materia(Integer idMateria, String nombre, Integer anio) {
-        this.idMateria = idMateria;
+    public Materia() {
+    }
+
+    public Materia(Integer codigoMateria, String nombre, Integer ano) {
+        this.codigoMateria = codigoMateria;
         this.nombre = nombre;
-        this.anio = anio;
+        this.ano = ano;
     }
 
-    public Integer getIdMateria() {
-        return idMateria;
+    public Integer getCodigoMateria() {
+        return codigoMateria;
     }
 
-    public void setIdMateria(Integer idMateria) {
-        this.idMateria = idMateria;
+    public void setCodigoMateria(Integer codigoMateria) {
+        this.codigoMateria = codigoMateria;
     }
 
     public String getNombre() {
@@ -31,11 +34,12 @@ public class Materia {
         this.nombre = nombre;
     }
 
-    public Integer getAnio() {
-        return anio;
+    public Integer getAno() {
+        return ano;
     }
 
-    public void setAnio(Integer anio) {
-        this.anio = anio;
+    public void setAno(Integer ano) {
+        this.ano = ano;
     }
+    
 }
