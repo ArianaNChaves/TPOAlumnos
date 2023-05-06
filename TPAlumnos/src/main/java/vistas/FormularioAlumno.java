@@ -5,6 +5,9 @@
  */
 package vistas;
 
+import com.mycompany.tpalumnos.Alumno;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Mauro
@@ -35,7 +38,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         jtApellido = new javax.swing.JTextField();
         jtNombre = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jbtNuevoAl = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
         jLabel1.setText("Formulario de Alumnos");
@@ -53,10 +56,10 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton2.setText("Nuevo");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jbtNuevoAl.setText("Nuevo");
+        jbtNuevoAl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jbtNuevoAlActionPerformed(evt);
             }
         });
 
@@ -87,7 +90,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2)
+                                .addComponent(jbtNuevoAl)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton3))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -115,7 +118,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2)
+                    .addComponent(jbtNuevoAl)
                     .addComponent(jButton3))
                 .addGap(15, 15, 15))
         );
@@ -123,10 +126,10 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jbtNuevoAlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtNuevoAlActionPerformed
         // TODO add your handling code here:
         limpiar();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jbtNuevoAlActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -135,9 +138,19 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        try{
+            
+        
         int Legajo = Integer.parseInt(jtLegajo.getText());
         String apellido = jtApellido.getText();
         String nombre = jtNombre.getText();
+        Alumno nvAlumno=new Alumno(Legajo,apellido,nombre);
+        View.nuevoAlumno.agregarAlumno(Legajo, apellido, nombre);
+        JOptionPane.showConfirmDialog(this, Legajo+apellido+nombre);
+        JOptionPane.showMessageDialog(this,"Alumno agregado exitosamente");
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(this, "Alumno no agregado por error de datos");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
     public void limpiar() {
         jtLegajo.setText("");
@@ -147,12 +160,12 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jbtNuevoAl;
     private javax.swing.JTextField jtApellido;
     private javax.swing.JTextField jtLegajo;
     private javax.swing.JTextField jtNombre;

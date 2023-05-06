@@ -5,6 +5,7 @@
  */
 package vistas;
 
+import com.mycompany.tpalumnos.Alumno;
 import com.mycompany.tpalumnos.Materia;
 
 
@@ -17,6 +18,7 @@ import com.mycompany.tpalumnos.Materia;
  */
 public class View extends javax.swing.JFrame {
     public static Materia nuevaMateria=new Materia();
+    public static Alumno nuevoAlumno=new Alumno();
 
     /**
      * Creates new form FormularioMateria

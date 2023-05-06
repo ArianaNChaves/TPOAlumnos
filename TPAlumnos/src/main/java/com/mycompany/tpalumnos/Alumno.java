@@ -4,30 +4,32 @@
  */
 package com.mycompany.tpalumnos;
 
-import java.util.ArrayList;
+
+import java.util.HashMap;
 import java.util.List;
 
 public class Alumno {
 
-    private int legajo;
+    private Integer legajo;
     private String apellido;
     private String nombre;
+    private HashMap<Integer, String> listAlumnos=new HashMap<Integer,String>();
 
-    public Alumno(int legajo, String apellido, String nombre) {
+    public Alumno() {
+    }
+
+    public Alumno(Integer legajo, String apellido, String nombre) {
         this.legajo = legajo;
         this.apellido = apellido;
         this.nombre = nombre;
 
     }
 
-    public Alumno() {
-    }
-
-    public int getLegajo() {
+    public Integer getLegajo() {
         return legajo;
     }
 
-    public void setLegajo(int legajo) {
+    public void setLegajo(Integer legajo) {
         this.legajo = legajo;
     }
 
@@ -46,5 +48,17 @@ public class Alumno {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
+    public boolean agregarAlumno(Integer legajo, String apellido, String nombre){
+        boolean agregado=false;
+        if (!listAlumnos.containsKey(legajo)){
+            listAlumnos.put(legajo, nombre);
+            agregado=true;
+        }
+        
+        return agregado;
+    }
+
+
 
 }

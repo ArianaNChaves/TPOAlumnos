@@ -5,8 +5,11 @@
 package com.mycompany.tpalumnos;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import javax.swing.JOptionPane;
 
 public class Materia {
     private Integer codigoMateria;
@@ -57,4 +60,5 @@ public class Materia {
         }
         return agregado;
     }
+
 }

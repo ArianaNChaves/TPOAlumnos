@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 package vistas;
-
 import com.mycompany.tpalumnos.Alumno;
 import com.mycompany.tpalumnos.Materia;
+import java.util.Map;
 
 /**
  *
@@ -33,8 +33,8 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jcboxMaterias = new javax.swing.JComboBox<>();
+        jcbAlumno = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -43,6 +43,12 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         jLabel2.setText("Elija una Materia");
 
         jLabel3.setText("Elija un Alumno");
+
+        jcboxMaterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcboxMateriasActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Inscribir");
 
@@ -64,8 +70,8 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(66, 66, 66)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox2, 0, 146, Short.MAX_VALUE))))
+                            .addComponent(jcboxMaterias, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jcbAlumno, 0, 146, Short.MAX_VALUE))))
                 .addContainerGap(74, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -82,11 +88,11 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcboxMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcbAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -97,14 +103,20 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jcboxMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcboxMateriasActionPerformed
+        // TODO add your handling code here:
+       
+        
+    }//GEN-LAST:event_jcboxMateriasActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<Alumno> jComboBox1;
-    private javax.swing.JComboBox<Materia> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JComboBox<Alumno> jcbAlumno;
+    private javax.swing.JComboBox<Materia> jcboxMaterias;
     // End of variables declaration//GEN-END:variables
 }

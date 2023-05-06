@@ -150,6 +150,7 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
             Materia nvMateria = new Materia(codigoMateria, nombreMateria, anioMateria);
             View.nuevaMateria.agregarMateria(codigoMateria, nombreMateria,anioMateria);
             JOptionPane.showMessageDialog(this, "Materia agregada exitosamente.");
+            
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Materia no agregada por error de datos.");
         }
