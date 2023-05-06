@@ -4,10 +4,15 @@
  */
 package com.mycompany.tpalumnos;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class Materia {
-    Integer codigoMateria;
-    String nombre;
-    Integer ano;
+    private Integer codigoMateria;
+    private String nombre;
+    private Integer ano;
+    private HashMap<Integer, String> listaMaterias=new HashMap<Integer, String>();
 
     public Materia() {
     }
@@ -17,6 +22,8 @@ public class Materia {
         this.nombre = nombre;
         this.ano = ano;
     }
+
+    
 
     public Integer getCodigoMateria() {
         return codigoMateria;
@@ -42,4 +49,12 @@ public class Materia {
         this.ano = ano;
     }
     
+    public boolean agregarMateria(Integer codigoMateria, String nombre){
+        boolean agregado=false;
+        if(!listaMaterias.containsKey(codigoMateria)){
+            listaMaterias.put(codigoMateria, nombre);
+            agregado=true;
+        }
+        return agregado;
+    }
 }

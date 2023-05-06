@@ -63,8 +63,18 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
         });
 
         jButton2.setText("Nuevo");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Salir");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,16 +148,29 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
         int codigoMateria=Integer.parseInt(jtCodMat.getText());
         String nombreMateria=jtNombreMat.getText();
         int anioMateria=Integer.parseInt(jtAnioPert.getText());
-        Map<Integer, String> map = new HashMap<>();
         Materia nvMateria=new Materia(codigoMateria,nombreMateria,anioMateria);
-        map.put(codigoMateria, nombreMateria);
+        View.nuevaMateria.agregarMateria(codigoMateria, nombreMateria);
         JOptionPane.showMessageDialog(this, "Materia agregada exitosamente.");
         }catch(Exception ex){
-            JOptionPane.showMessageDialog(this,ex);
+            JOptionPane.showMessageDialog(this,"Materia no agregada por error de datos.");
         }
         
     }//GEN-LAST:event_saveFormMatActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        limpiar();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+    public void limpiar(){
+        jtCodMat.setText("");
+        jtNombreMat.setText("");
+        jtAnioPert.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
